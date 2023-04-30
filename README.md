@@ -1,1 +1,5 @@
-Гра Py.game
+# final-game
+
+## shooters
+
+```python```
