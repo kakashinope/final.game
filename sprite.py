@@ -12,22 +12,25 @@ class GameSprite(sprite.Sprite):
 
 class Player(GameSprite):
 
-    def __init__(self, img_name_1, img_name_2, width, height, x, y):
-        super().__init__(img_name_1, width, height, x, y)
-        self.img_1 = transform.scale(image.load(img_name_1), (width, height))
-        self.img_2 = transform.scale(image.load(img_name_2), (width, height))
+  
 
-        self.isJump = False
-        self.jumpCount = 10
-
-    def move(self):
+    def move1(self):
         keys = key.get_pressed()
-        if keys[K_LEFT]:
-            self.image = self.img_2
-            self.rect.x -= 5
-        if keys[K_RIGHT]:
-            self.image = self.img_1
-            self.rect.x += 5
+        if keys[K_UP]:
+            
+            self.rect.y -= 5
+        if keys[K_DOWN]:
+            self.rect.y += 5
+
+    def move2(self):
+        keys = key.get_pressed()
+        if keys[K_w]:
+            
+            self.rect.y -= 5
+        if keys[K_s]:
+            self.rect.y += 5            
+
+    
 
     def jump(self):
         if self.isJump:
